@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANSAR | Ресторан в Урус-Мартане — меню, цены, доставка</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+    <div class="logo">ANSAR</div>
+    <!-- Иконка бургера для мобильных -->
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    <nav class="nav-container">
+        <ul class="nav-links">
+            <li><a href="#menu">Меню</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+
+    </header>
+
+    <section class="hero">
+    <div class="hero-content">
+        <!-- Улучшенный заголовок для SEO -->
+        <h1>ANSAR: Там, где встречаются вкус и гостеприимство</h1>
+        <p>«Чеченская и европейская кухня в самом центре города. Попробуйте наши легендарные стейки и национальные блюда».</p>
+        
+        <div class="hero-buttons">
+            <button class="btn-primary" onclick="scrollToMenu()">Смотреть меню</button>
+            <!-- Новая кнопка заказа -->
+            <button class="btn-primary" onclick="window.location.href='tel:+79280207060'">Заказать доставку</button>
+        </div>
+    </div>
+</section>
+
+
+  <section id="menu" class="menu-section">
+    <h2 class="section-title">Меню ANSAR</h2>
+    
+    <!-- Переключатель категорий -->
+     <!-- Переключатель категорий -->
+    <div class="category-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all')">Все</button>
+        <button class="tab-btn" onclick="filterMenu('steaks')">🔥 Стейки</button>
+        <button class="tab-btn" onclick="filterMenu('chechen')">Чеченская</button>
+        <button class="tab-btn" onclick="filterMenu('desserts')">Десерты</button>
+        <button class="tab-btn" onclick="filterMenu('drinks')">Напитки</button>       
+        <button class="tab-btn" onclick="filterMenu('sushi')">Японская</button>
+        <button class="tab-btn" onclick="filterMenu('pizza')">Пицца</button>
+    </div>
+
+    
+
+    <div class="menu-scroll-wrapper">
+    <div class="menu-grid" id="menu-container">  
+            <!-- Японская -->
+            <div class="menu-card" data-category="sushi">
+                <div class="card-img" style="background-image: url('set\ ansar.jpg');"></div>
+                <h3>Суши</h3>
+                <p>«Король стейков с высокой степенью мраморности.»</p>
+                <span class="price">1200 ₽</span>
+            </div>
+            <div class="menu-card" data-category="chechen">
+                <div class="card-img" style="background-image: url('жижиг\ галнаш.jpg');"></div>
+                <h3>Жижиг галнаш</h3>
+                <p>«Попробуйте настоящий жижиг-галнаш: сытное национальное блюдо из говядины или баранины. Аутентичный рецепт, ручная работа и вкус гор в каждой порции.
+»</p>
+                <span class="price">1200 ₽</span>
+            </div>
+            <!-- Десерты -->
+            <div class="menu-card" data-category="desserts">
+                <div class="card-img" style="background-image: url('chiz.jpg');"></div>
+                <h3>Чизкейк</h3>
+                <p>«Нежнейшее лакомство, которое тает во рту. Насыщенный сливочный вкус, бархатистая структура и тонкий аромат ванили — идеальное дополнение к чашке кофе или авторского чая.»</p>
+                <span class="price">350 ₽</span>
+            </div>
+            <!-- Напитки -->
+            <div class="menu-card" data-category="drinks">
+                <div class="card-img" style="background-image: url('capucin.jpg');"></div>
+                <h3>Капучино</h3>                      
+                <p>«Идеальный баланс крепкого эспрессо и нежного взбитого молока. Плотная мелкозернистая пенка сохраняет температуру и аромат напитка до самого последнего глотка.»</p>
+                <span class="price">180 ₽</span>
+            </div>
+
+            <div class="menu-card" data-category="steaks">
+        <div class="card-img" style="background-image: url('ribay.jpg');">
+            <span class="badge">Best Seller</span>
+        </div>
+        <h3>Рибай Премиум</h3>
+        <p>«Король стейков с высокой степенью мраморности. Зерновой откорм придает мясу исключительную нежность и насыщенный говяжий вкус. Готовим на раскаленных углях до идеального Medium.»</p>
+        <div class="card-footer">
+            <span class="price">1 850 ₽</span>
+            <span class="weight">350г</span>
+        </div>
+    </div>
+
+    <!-- Стейк Ти-Бон -->
+    <div class="menu-card" data-category="steaks">
+        <div class="card-img" style="background-image: url('ti-bon.jpg');"></div>
+        <h3>Ти-Бон Стейк</h3>
+        <p>«Брутальный выбор для ценителей. Сочетает в себе два разных характера: тающее во рту филе и ароматный, сочный стриплойн, разделенные Т-образной костью.»</p>
+        <div class="card-footer">
+            <span class="price">2 100 ₽</span>
+            <span class="weight">500г</span>
+        </div>
+    </div>
+
+    <!-- Стейк Филе-Миньон -->
+    <div class="menu-card" data-category="steaks">
+        <div class="card-img" style="background-image: url('filet-mi.jpeg');"></div>
+        <h3>Филе-Миньон</h3>
+        <p>«Самый нежный стейк из центральной части вырезки. Практически не содержит жира, но обладает невероятно бархатистой текстурой. Настоящий аристократ в мире мяса.»</p>
+        <div class="card-footer">
+            <span class="price">1 600 ₽</span>
+            <span class="weight">250г</span>
+        </div>
+    </div>
+
+    <div class="menu-card" data-category="steaks">
+        <div class="card-img" style="background-image: url('Machete.jpg');"></div>
+        <h3>Стейк Мачете</h3>
+        <p>«Альтернативный отруб с ярко выраженным мясным вкусом и уникальной текстурой. Длинные волокна отлично удерживают сок внутри при обжарке на гриле.»</p>
+        <div class="card-footer">
+            <span class="price">1 600 ₽</span>
+            <span class="weight">250г</span>
+        </div>
+    </div>
+    
+    <!-- Добавьте другие блюда по аналогии -->
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Плавающая кнопка связи и соцсети -->
+<div class="contact-widget">
+    <div class="social-icons">
+    <a href="https://wa.me" class="icon whatsapp" target="_blank">
+        <img src="wa.png" alt="WA">
+    </a>
+    <a href="https://t.me" class="icon telegram" target="_blank">
+        <img src="tg.png" alt="TG">
+    </a>
+    <a href="https://instagram.com" class="icon instagram" target="_blank">
+        <img src="inst.png" alt="INST">
+    </a>
+</div>
+
+
+    <a href="tel:+79280207060" class="btn-call-styled">
+        <span class="phone-icon">📞</span>
+        <span class="btn-text">Позвонить в Ansar</span>
+    </a>
+</div>
+
+<section id="delivery" class="delivery-section">
+    <h2 class="section-title">Доставка</h2>
+    <div class="delivery-grid">
+        <div class="delivery-item">
+            <div class="del-icon">🚀</div>
+            <h3>Быстро</h3>
+            <p>Доставим горячим за 40-60 минут по Урус-Мартану</p>
+        </div>
+        <div class="delivery-item">
+            <div class="del-icon">💰</div>
+            <h3>Выгодно</h3>
+            <p>Бесплатная доставка при заказе от 1500 ₽</p>
+        </div>
+        <div class="delivery-item">
+            <div class="del-icon">🕒</div>
+            <h3>График</h3>
+            <p>Принимаем заказы ежедневно с 10:00 до 23:00</p>
+        </div>
+    </div>
+</section>
+<div class="delivery-cta" style="text-align: center; margin-top: 40px;">
+    <a href="https://wa.me" class="btn-primary" style="text-decoration: none; border-radius: 30px; display: inline-block;">
+        Оформить доставку в WhatsApp
+    </a>
+</div>
+
+
+<section id="contacts" class="contacts-section">
+    <h2 class="section-title">Где мы находимся</h2>
+    <p class="address-text">Урус-Мартан, ул. им. Шейха Солса-Хаджи Яндарова, 79А</p>
+    
+    <div class="map-container">
+        <!-- Интерактивная карта -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1029.584669646981!2d45.54288908257904!3d43.12331605715004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404fd81bceb1701d%3A0x80982b1ab6b18735!2sAnsar!5e0!3m2!1sru!2sru!4v1777047858755!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div style="margin-top: 20px;">
+    <a href="yandexmaps://maps.yandex.ru/?pt=45.543381,43.123498&z=17&l=map" class="btn-primary" style="display: inline-block; text-decoration: none; border-radius: 30px;">Открыть в Навигаторе</a>
+</div>
+
+</section>
+<!-- Модальное окно для просмотра блюда -->
+<div id="food-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+            <img id="modal-img" src="" alt="Food Image">
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <span id="modal-price" class="price"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
