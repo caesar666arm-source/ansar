@@ -48,18 +48,49 @@
      <!-- Переключатель категорий -->
     <div class="category-tabs">
         <button class="tab-btn active" onclick="filterMenu('all')">Все</button>
-        <button class="tab-btn" onclick="filterMenu('steaks')">🔥 Стейки</button>
-        <button class="tab-btn" onclick="filterMenu('chechen')">Чеченская</button>
+        <button class="tab-btn" onclick="filterMenu('steaks')">🔥 Мангал</button>
+        <button class="tab-btn" onclick="filterMenu('evrope')">Европейская кухня</button>
+        <button class="tab-btn" onclick="filterMenu('chechen')">Чеченская кухня</button>
         <button class="tab-btn" onclick="filterMenu('desserts')">Десерты</button>
         <button class="tab-btn" onclick="filterMenu('drinks')">Напитки</button>       
-        <button class="tab-btn" onclick="filterMenu('sushi')">Японская</button>
+        <button class="tab-btn" onclick="filterMenu('sushi')">Роллы</button>
         <button class="tab-btn" onclick="filterMenu('pizza')">Пицца</button>
     </div>
 
     
 
     <div class="menu-scroll-wrapper">
-    <div class="menu-grid" id="menu-container">  
+    <div class="menu-grid" id="menu-container"> 
+         <!-- европейская -->
+        <div class="menu-card" data-category="evrope">
+                <div class="card-img" style="background-image: url('Чечевичный\ суп.webp');"></div>
+                <h3>Чечевичный суп</h3>
+                <p>«Классика турецкой кухни в каждой ложке.
+                    Вкус: Насыщенный, бархатистый, с легкой пряной ноткой.
+                    Польза: Богатый растительным белком и клетчаткой.
+                    Детали: Подается с долькой лимона для идеального баланса.
+                .»</p>
+                <span class="price">300 ₽</span>
+            </div>
+            <div class="menu-card" data-category="evrope">
+                <div class="card-img" style="background-image: url('udon.png');"></div>
+                <h3>Удон с курицей</h3>
+                <p>«Сытный обед в лучших традициях паназии.
+                    Состав: Пшеничная лапша, сочное филе и свежие овощи.
+                    Вкус: Обжарка в соусе терияки придает легкую сладость.
+                    Текстура: Плотная лапша и хрустящие овощи вок.»</p>
+                <span class="price">400 ₽</span>
+            </div>
+            <div class="menu-card" data-category="evrope">
+                <div class="card-img" style="background-image: url('том-яр.webp');"></div>
+                <h3>Том-яр</h3>
+                <p>«Легендарный тайский суп для любителей ярких эмоций.
+                    Вкус: Острый, кислый и невероятно ароматный.
+                    Основа: Кокосовое молоко, лемонграсс и отборные морепродукты.
+                    Особенность: Согревает и переносит на побережье Таиланда.
+                    »</p>
+                <span class="price">450 ₽</span>
+            </div>
             <!-- Японская -->
             <div class="menu-card" data-category="sushi">
                 <div class="card-img" style="background-image: url('set\ ansar.jpg');"></div>
@@ -67,12 +98,24 @@
                 <p>«Король стейков с высокой степенью мраморности.»</p>
                 <span class="price">1200 ₽</span>
             </div>
+             <!-- Чеченская кухня -->
             <div class="menu-card" data-category="chechen">
                 <div class="card-img" style="background-image: url('жижиг\ галнаш.jpg');"></div>
                 <h3>Жижиг галнаш</h3>
-                <p>«Попробуйте настоящий жижиг-галнаш: сытное национальное блюдо из говядины или баранины. Аутентичный рецепт, ручная работа и вкус гор в каждой порции.
-»</p>
-                <span class="price">1200 ₽</span>
+                <p>«Попробуйте настоящий жижиг-галнаш: сытное национальное блюдо из говядины или баранины. Аутентичный рецепт, ручная работа и вкус гор в каждой порции.»</p>
+                <span class="price">800 ₽</span>
+            </div>
+            <div class="menu-card" data-category="chechen">
+                <div class="card-img" style="background-image: url('дакъин\ жижигал.jpeg');"></div>
+                <h3>Дакъин жижигал</h3>
+                <p>«Попробуйте настоящий жижиг-галнаш: сытное национальное блюдо из говядины или баранины. Аутентичный рецепт, ручная работа и вкус гор в каждой порции.»</p>
+                <span class="price">850 ₽</span>
+            </div>
+            <div class="menu-card" data-category="chechen">
+                <div class="card-img" style="background-image: url('баари\ галнаш.webp');"></div>
+                <h3>баари галнаш</h3>
+                <p>«Попробуйте настоящий жижиг-галнаш: сытное национальное блюдо из говядины или баранины. Аутентичный рецепт, ручная работа и вкус гор в каждой порции.»</p>
+                <span class="price">800 ₽</span>
             </div>
             <!-- Десерты -->
             <div class="menu-card" data-category="desserts">
@@ -149,7 +192,7 @@
     <a href="https://t.me" class="icon telegram" target="_blank">
         <img src="tg.png" alt="TG">
     </a>
-    <a href="https://instagram.com/ansar_0207060" class="icon instagram" target="_blank">
+    <a href="https://instagram.com" class="icon instagram" target="_blank">
         <img src="inst.png" alt="INST">
     </a>
 </div>

@@ -644,7 +644,6 @@ body {
 .delivery-item:nth-child(3) { animation-delay: 0.6s; }
 .menu-card p {
     font-size: 13px;
-    line-height: 1.4;
     color: var(--text-dim);
     min-height: 60px; /* Удерживает карточки ровными */
     margin-bottom: 10px;
