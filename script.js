@@ -147,3 +147,16 @@ window.onclick = (event) => {
         document.body.style.overflow = "auto";
     }
 };
+document.addEventListener('DOMContentLoaded', () => {
+    const heroContent = document.querySelector('.hero-content');
+    
+    // Плавное появление контента
+    heroContent.style.opacity = '0';
+    heroContent.style.transform = 'translateY(30px)';
+    heroContent.style.transition = 'all 1.5s ease-out';
+
+    setTimeout(() => {
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+    }, 500);
+});
